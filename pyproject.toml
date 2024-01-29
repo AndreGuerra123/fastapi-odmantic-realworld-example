@@ -20,7 +20,7 @@ isort = "^5.13.2"
 black = "^22.6.0"
 flake8 = "^7.0.0"
 mypy = "^0.971"
-pytest-asyncio = "^0.23.3"
+pytest-asyncio = "^0.23.4"
 pre-commit = "^2.20.0"
 
 [build-system]
