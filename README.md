@@ -36,7 +36,7 @@
 ## Coming Soon
 
 - [ ] Articles with details on every single step required to build this app
-- [ ] Add static code and complexity analysis
+- [ ] Add static code and complexity analysis (wily)
 - [ ] Live reloading
 - [ ] Unit Testing with coverage
 - [ ] Debug vscode

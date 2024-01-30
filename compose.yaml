@@ -19,16 +19,6 @@ services:
     networks:
       - realworld
 
-  complexity-tests:
-    build:
-      dockerfile: dockerfile.dev
-      context: .
-    volumes:
-      - ./:/app/
-    entrypoint:
-      ["/bin/sh", "-c", "poetry run wily build . && poetry run wily diff ."]
-    profiles: [tests]
-
   unit-tests:
     build:
       dockerfile: dockerfile.dev
