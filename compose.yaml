@@ -19,6 +19,15 @@ services:
     networks:
       - realworld
 
+  complexity-tests:
+    build:
+      dockerfile: dockerfile.dev
+      context: .
+    volumes:
+      - ./:/app/
+    entrypoint: poetry run wily build .
+    profiles: [tests]
+
   unit-tests:
     build:
       dockerfile: dockerfile.dev

@@ -32,11 +32,3 @@ repos:
     rev: 7.0.0
     hooks:
       - id: flake8
-  - repo: local
-    hooks:
-      - id: wily
-        name: wily
-        entry: wily diff src/ -r HEAD~1
-        verbose: true
-        language: python
-        additional_dependencies: [wily]
