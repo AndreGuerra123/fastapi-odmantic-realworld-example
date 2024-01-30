@@ -26,7 +26,7 @@ services:
     volumes:
       - ./:/app/
     entrypoint:
-      ["/bin/sh", "-c", "poetry run wily build . && poetry run wily diff"]
+      ["/bin/sh", "-c", "poetry run wily build . && poetry run wily diff ."]
     profiles: [tests]
 
   unit-tests:
