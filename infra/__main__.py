@@ -1,25 +1,24 @@
-import json
-from pulumi import export, ResourceOptions, Output
 import pulumi_aws as aws
-import pulumi_docker as docker
 import pulumi_awsx as awsx
+from pulumi import Output, export
 
 repository = awsx.ecr.Repository(
     "repository",
-    awsx.ecr.RepositoryArgs(
-        force_delete=True
-    ),
+    awsx.ecr.RepositoryArgs(force_delete=True),
 )
 
 image = awsx.ecr.Image(
     "image",
     awsx.ecr.ImageArgs(
-        repository_url=repository.url, context="../", dockerfile="../dockerfile", platform="linux/amd64"
+        repository_url=repository.url,
+        context="../",
+        dockerfile="../dockerfile",
+        platform="linux/amd64",
     ),
 )
 
 # Create an ECS cluster to run a container-based service.
-cluster = aws.ecs.Cluster('cluster')
+cluster = aws.ecs.Cluster("cluster")
 
 lb = awsx.lb.ApplicationLoadBalancer("lb")
 
@@ -42,8 +41,10 @@ service = awsx.ecs.FargateService(
                     )
                 ],
                 environment=[
-                    awsx.ecs.TaskDefinitionKeyValuePairArgs(name="mongo_uri", value="test"),
-				]
+                    awsx.ecs.TaskDefinitionKeyValuePairArgs(
+                        name="mongo_uri", value="test"
+                    ),
+                ],
             ),
         ),
     ),
@@ -51,4 +52,4 @@ service = awsx.ecs.FargateService(
 
 export("url", Output.concat("http://", lb.load_balancer.dns_name))
 
-#TODO: Add mongo
+# TODO: Add mongo
