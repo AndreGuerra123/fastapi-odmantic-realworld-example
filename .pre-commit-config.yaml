@@ -32,3 +32,7 @@ repos:
     rev: 7.0.0
     hooks:
       - id: flake8
+  - repo: https://github.com/PyCQA/bandit
+    rev: "1.7.7"
+    hooks:
+      - id: bandit
