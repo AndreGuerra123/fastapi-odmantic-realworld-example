@@ -15,4 +15,4 @@ COPY src ./src
 
 RUN poetry install --without dev --no-root
 
-ENTRYPOINT ["poetry", "run", "uvicorn", "--host", "0.0.0.0", "--app-dir", "./src/", "api:app"]
+ENTRYPOINT ["poetry", "run", "uvicorn", "--host", "0.0.0.0", "--port", "80", "--app-dir", "./src/", "api:app"]
