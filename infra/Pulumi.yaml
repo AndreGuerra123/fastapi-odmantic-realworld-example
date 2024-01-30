@@ -1,0 +1,10 @@
+name: realworld
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: A minimal realworld api
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python
