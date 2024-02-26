@@ -16,7 +16,7 @@ uvicorn = "^0.27.0"
 wily = "^1.25.0"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.1.2"
+pytest = "^8.0.2"
 isort = "^5.13.2"
 black = "^22.6.0"
 flake8 = "^7.0.0"
