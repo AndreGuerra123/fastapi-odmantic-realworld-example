@@ -7,7 +7,7 @@ license = "ISC"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "0.109.0"
+fastapi = "0.109.1"
 passlib = { extras = ["bcrypt"], version = "^1.7.4" }
 python-jose = { extras = ["cryptography"], version = "^3.3.0" }
 odmantic = { git = "https://github.com/art049/odmantic.git" }
@@ -18,7 +18,7 @@ wily = "^1.25.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.1.2"
 isort = "^5.13.2"
-black = "^22.6.0"
+black = "^24.3.0"
 flake8 = "^7.0.0"
 mypy = "^0.971"
 pytest-asyncio = "^0.23.3"
